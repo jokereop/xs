@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb7bf7ef-db4b-4ca2-a69a-f0ce28e529e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/admin/metaposts_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/admin/metapost.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admin/metaposts/show.html.erb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/admin/meta_post_controller.rb" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/controllers/metapost_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/metaposts_controller.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/admin/meta_post/create.html.erb" afterPath="$PROJECT_DIR$/app/views/admin/metaposts/create.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/admin/meta_post/desroy.html.erb" afterPath="$PROJECT_DIR$/app/views/admin/metaposts/desroy.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/admin/meta_post/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/admin/metaposts/edit.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/admin/meta_post/index.html.erb" afterPath="$PROJECT_DIR$/app/views/admin/metaposts/index.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/admin/meta_post/new.html.erb" afterPath="$PROJECT_DIR$/app/views/admin/metaposts/new.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/admin/meta_post/update.html.erb" afterPath="$PROJECT_DIR$/app/views/admin/metaposts/update.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/metapost/create.html.erb" afterPath="$PROJECT_DIR$/app/views/metaposts/create.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/metapost/desroy.html.erb" afterPath="$PROJECT_DIR$/app/views/metaposts/desroy.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/metapost/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/metaposts/edit.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/metapost/index.html.erb" afterPath="$PROJECT_DIR$/app/views/metaposts/index.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/metapost/new.html.erb" afterPath="$PROJECT_DIR$/app/views/metaposts/new.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/metapost/update.html.erb" afterPath="$PROJECT_DIR$/app/views/metaposts/update.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/lang.rb" afterPath="$PROJECT_DIR$/app/models/lang.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -89,7 +68,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/metaposts/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -119,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+            <state relative-caret-position="180">
+              <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -153,11 +132,11 @@
         <option value="$PROJECT_DIR$/app/controllers/admin/metapost_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/metapost/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/metapost/new.html.erb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/metaposts_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/metaposts/new.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/admin/metaposts_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/metaposts/show.html.erb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
       </list>
     </option>
   </component>
@@ -781,12 +760,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1494267957565</updated>
-      <workItem from="1494267959226" duration="2422000" />
+      <workItem from="1494267959226" duration="2868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2422000" />
+    <option name="totallyTimeSpent" value="2868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="832" extended-state="6" />
@@ -999,14 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/metaposts_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1043,6 +1014,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
           <folding />
         </state>
       </provider>
