@@ -1,4 +1,4 @@
-class MetapostController < ApplicationController
+class MetapostsController < ApplicationController
   def index
   end
 

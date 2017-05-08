@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 20170508175246) do
 
   create_table "label_meta", force: :cascade do |t|
-    t.integer  "label_id"
-    t.text     "text"
-    t.integer  "lang_id"
+    t.integer "label_id"
+    t.text "text"
+    t.integer "lang_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["label_id"], name: "index_label_meta_on_label_id"
@@ -23,23 +23,23 @@ ActiveRecord::Schema.define(version: 20170508175246) do
   end
 
   create_table "labels", force: :cascade do |t|
-    t.string   "tips"
+    t.string "tips"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "langs", force: :cascade do |t|
-    t.text    "name"
-    t.string  "min"
+    t.text "name"
+    t.string "min"
     t.integer "code"
   end
 
   create_table "meta_posts", force: :cascade do |t|
-    t.integer  "post_id"
-    t.string   "title"
-    t.text     "summary"
-    t.text     "body"
-    t.integer  "lang_id"
+    t.integer "post_id"
+    t.string "title"
+    t.text "summary"
+    t.text "body"
+    t.integer "lang_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lang_id"], name: "index_meta_posts_on_lang_id"
@@ -52,9 +52,9 @@ ActiveRecord::Schema.define(version: 20170508175246) do
   end
 
   create_table "page_meta", force: :cascade do |t|
-    t.integer  "page_id"
-    t.text     "text"
-    t.integer  "lang_id"
+    t.integer "page_id"
+    t.text "text"
+    t.integer "lang_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lang_id"], name: "index_page_meta_on_lang_id"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20170508175246) do
   end
 
   create_table "pages", force: :cascade do |t|
-    t.string   "tips"
+    t.string "tips"
     t.datetime "datetime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20170508175246) do
     t.integer "user_id"
     t.integer "payment_system_id"
     t.integer "payment_meta_id"
-    t.string  "value"
+    t.string "value"
     t.integer "payment_value_id"
     t.integer "payment_statys_id"
     t.index ["payment_meta_id"], name: "index_payment_data_on_payment_meta_id"
@@ -84,8 +84,8 @@ ActiveRecord::Schema.define(version: 20170508175246) do
 
   create_table "payment_meta", force: :cascade do |t|
     t.integer "payment_system_id"
-    t.string  "name"
-    t.string  "value"
+    t.string "name"
+    t.string "value"
     t.index ["payment_system_id"], name: "index_payment_meta_on_payment_system_id"
   end
 
@@ -102,11 +102,11 @@ ActiveRecord::Schema.define(version: 20170508175246) do
   end
 
   create_table "post_metum", force: :cascade do |t|
-    t.integer  "post_id"
-    t.string   "title"
-    t.text     "summary"
-    t.text     "body"
-    t.integer  "lang_id"
+    t.integer "post_id"
+    t.string "title"
+    t.text "summary"
+    t.text "body"
+    t.integer "lang_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lang_id"], name: "index_post_metum_on_lang_id"
@@ -126,7 +126,7 @@ ActiveRecord::Schema.define(version: 20170508175246) do
   create_table "rate_meta_values", force: :cascade do |t|
     t.integer "rate_meta_id"
     t.integer "rate_id"
-    t.string  "value"
+    t.string "value"
     t.index ["rate_id"], name: "index_rate_meta_values_on_rate_id"
     t.index ["rate_meta_id"], name: "index_rate_meta_values_on_rate_meta_id"
   end
@@ -140,13 +140,13 @@ ActiveRecord::Schema.define(version: 20170508175246) do
   end
 
   create_table "statistic_auths", force: :cascade do |t|
-    t.integer  "statistic_meta_id"
-    t.integer  "user_id"
-    t.string   "name"
-    t.string   "ip"
+    t.integer "statistic_meta_id"
+    t.integer "user_id"
+    t.string "name"
+    t.string "ip"
     t.datetime "datetime"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["statistic_meta_id"], name: "index_statistic_auths_on_statistic_meta_id"
     t.index ["user_id"], name: "index_statistic_auths_on_user_id"
   end
@@ -156,14 +156,14 @@ ActiveRecord::Schema.define(version: 20170508175246) do
   end
 
   create_table "statistic_pays", force: :cascade do |t|
-    t.integer  "statistic_metum_id"
-    t.integer  "user_id"
-    t.integer  "payment_system_id"
-    t.integer  "rate_id"
-    t.string   "value"
+    t.integer "statistic_metum_id"
+    t.integer "user_id"
+    t.integer "payment_system_id"
+    t.integer "rate_id"
+    t.string "value"
     t.datetime "datetime"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["payment_system_id"], name: "index_statistic_pays_on_payment_system_id"
     t.index ["rate_id"], name: "index_statistic_pays_on_rate_id"
     t.index ["statistic_metum_id"], name: "index_statistic_pays_on_statistic_metum_id"
@@ -173,14 +173,14 @@ ActiveRecord::Schema.define(version: 20170508175246) do
   create_table "user_balanсes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "payment_system_id"
-    t.string  "value"
+    t.string "value"
     t.index ["payment_system_id"], name: "index_user_balanсes_on_payment_system_id"
     t.index ["user_id"], name: "index_user_balanсes_on_user_id"
   end
 
   create_table "user_meta", force: :cascade do |t|
     t.integer "user_id"
-    t.string  "value"
+    t.string "value"
     t.index ["user_id"], name: "index_user_meta_on_user_id"
   end
 
@@ -189,18 +189,18 @@ ActiveRecord::Schema.define(version: 20170508175246) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

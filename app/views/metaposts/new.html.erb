@@ -1,4 +1,5 @@
-<%= form_for [:admin, @meta_post] do |f| %>
+
+<%= form_for @metapost do |f| %>
 	
 
 	<div class="form_control">
@@ -23,6 +24,6 @@
     <div class="form_control">
 		<%= f.submit 'Save' %>
 
-
+    </div>
 
 <% end %>
