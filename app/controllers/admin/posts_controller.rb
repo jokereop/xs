@@ -10,15 +10,25 @@ class Admin::PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new(post_params)
+		@post = Post.new
 		if @post.save
-			redirect_to @post
-		else render :new
+			if @post.post_metum.create post_params[:post_metum_attributes]['0']
+				redirect_to @post
+			end
+			
+		else 
+		if @post.errors.any?
+			puts @post.errors.full_messages.inspect
+			end
+			render :new
 		end
-	end
+
+
+end
+
 
 	def post_params
-		params.require(:post).permit(:name, post_metum_attributes: [:id, :post_id, :title, :summary, :body, :lang_id])
+		params.require(:post).permit(post_metum_attributes: [:id, :post_id, :title, :summary, :body, :lang_id])
 		
 	end
 end

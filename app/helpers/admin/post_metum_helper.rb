@@ -1,0 +1,2 @@
+module Admin::PostMetumHelper
+end

@@ -1,6 +1,6 @@
-class CreatePostMeta < ActiveRecord::Migration[5.0]
+class CreatePostMetum < ActiveRecord::Migration[5.0]
   def change
-    create_table :post_meta do |t|
+    create_table :post_metum do |t|
       t.belongs_to :post, index: true
       t.string :title
       t.text :summary

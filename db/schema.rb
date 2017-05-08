@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170504101432) do
+ActiveRecord::Schema.define(version: 20170508175246) do
 
   create_table "label_meta", force: :cascade do |t|
     t.integer  "label_id"
@@ -32,6 +32,23 @@ ActiveRecord::Schema.define(version: 20170504101432) do
     t.text    "name"
     t.string  "min"
     t.integer "code"
+  end
+
+  create_table "meta_posts", force: :cascade do |t|
+    t.integer  "post_id"
+    t.string   "title"
+    t.text     "summary"
+    t.text     "body"
+    t.integer  "lang_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lang_id"], name: "index_meta_posts_on_lang_id"
+    t.index ["post_id"], name: "index_meta_posts_on_post_id"
+  end
+
+  create_table "metaposts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "page_meta", force: :cascade do |t|
@@ -84,7 +101,7 @@ ActiveRecord::Schema.define(version: 20170504101432) do
     t.string "name"
   end
 
-  create_table "post_meta", force: :cascade do |t|
+  create_table "post_metum", force: :cascade do |t|
     t.integer  "post_id"
     t.string   "title"
     t.text     "summary"
@@ -92,8 +109,8 @@ ActiveRecord::Schema.define(version: 20170504101432) do
     t.integer  "lang_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["lang_id"], name: "index_post_meta_on_lang_id"
-    t.index ["post_id"], name: "index_post_meta_on_post_id"
+    t.index ["lang_id"], name: "index_post_metum_on_lang_id"
+    t.index ["post_id"], name: "index_post_metum_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -106,16 +123,16 @@ ActiveRecord::Schema.define(version: 20170504101432) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "rate_meta", force: :cascade do |t|
-    t.string "value"
-  end
-
   create_table "rate_meta_values", force: :cascade do |t|
     t.integer "rate_meta_id"
     t.integer "rate_id"
     t.string  "value"
     t.index ["rate_id"], name: "index_rate_meta_values_on_rate_id"
     t.index ["rate_meta_id"], name: "index_rate_meta_values_on_rate_meta_id"
+  end
+
+  create_table "rate_metum", force: :cascade do |t|
+    t.string "value"
   end
 
   create_table "rates", force: :cascade do |t|

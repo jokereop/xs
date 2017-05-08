@@ -1,0 +1,2 @@
+module MetapostHelper
+end

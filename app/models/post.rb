@@ -1,4 +1,4 @@
 class Post < ApplicationRecord
-	has_many    :post_metum, dependent: :destroy
-	accepts_nested_attributes_for :post_metum
+	has_many    :meta_posts, dependent: :destroy
+	accepts_nested_attributes_for :meta_posts
 end

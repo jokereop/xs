@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  	
-	root "home#index"
+
+  get 'metapost/new'
+
 
 	resources :posts, only: [:index, :show]
 	resources :pages, only: [:index, :show]
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
 	namespace :admin do
  		resources :pages, except: [:show]
  		resources :posts, except: [:show]
+ 		resources :post_metum, except: [:show]
+    resources :meta_post, except: [:show]
  		root "cpanel#index"
 	end
 
