@@ -1,0 +1,7 @@
+
+<h1>News</h1>
+
+<% @posts.each do |post| %>
+	<h1><%= post.title %></h1>
+	<p><%= post.summary %></p>
+<% end %>

@@ -10,7 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170503085826) do
+ActiveRecord::Schema.define(version: 20170504101432) do
+
+  create_table "label_meta", force: :cascade do |t|
+    t.integer  "label_id"
+    t.text     "text"
+    t.integer  "lang_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["label_id"], name: "index_label_meta_on_label_id"
+    t.index ["lang_id"], name: "index_label_meta_on_lang_id"
+  end
+
+  create_table "labels", force: :cascade do |t|
+    t.string   "tips"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "langs", force: :cascade do |t|
+    t.text    "name"
+    t.string  "min"
+    t.integer "code"
+  end
+
+  create_table "page_meta", force: :cascade do |t|
+    t.integer  "page_id"
+    t.text     "text"
+    t.integer  "lang_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lang_id"], name: "index_page_meta_on_lang_id"
+    t.index ["page_id"], name: "index_page_meta_on_page_id"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string   "tips"
+    t.datetime "datetime"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "payment_data", force: :cascade do |t|
     t.integer "user_id"
@@ -43,6 +82,23 @@ ActiveRecord::Schema.define(version: 20170503085826) do
 
   create_table "payment_values", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "post_meta", force: :cascade do |t|
+    t.integer  "post_id"
+    t.string   "title"
+    t.text     "summary"
+    t.text     "body"
+    t.integer  "lang_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lang_id"], name: "index_post_meta_on_lang_id"
+    t.index ["post_id"], name: "index_post_meta_on_post_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "rate_balances", force: :cascade do |t|
@@ -126,7 +182,6 @@ ActiveRecord::Schema.define(version: 20170503085826) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.integer  "user_status_id",         default: 0,  null: false
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true
