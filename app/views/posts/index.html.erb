@@ -1,7 +1,7 @@
-
+<p> =<%= @posts2 %>= </p>
 <h1>News</h1>
 
 <% @posts.each do |post| %>
-	<h1><%= post.title %></h1>
+	<h3><%= link_to post.title, post_path(post.post_id) %></h3>
 	<p><%= post.summary %></p>
 <% end %>

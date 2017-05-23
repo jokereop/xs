@@ -1,0 +1,6 @@
+<h1>Page</h1>
+
+<% @pages.each do |page| %>
+	<h3><%= link_to page.title, edit_admin_page_path(page.page_id) %></h3>
+	<p><%= page.page_id %></p>
+<% end %>

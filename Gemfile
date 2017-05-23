@@ -26,6 +26,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
 
+# User password еncrypt
+gem 'bcrypt-ruby'
 
 
 # Use jquery as the JavaScript library
@@ -45,8 +47,9 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails'
 end
-gem 'devise', git: 'https://github.com/gogovan/devise.git', branch: 'rails-5.1'
+# gem 'devise', git: 'https://github.com/gogovan/devise.git', branch: 'rails-5.1'
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'

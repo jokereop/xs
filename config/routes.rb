@@ -1,19 +1,39 @@
 Rails.application.routes.draw do
 
-  resources :metaposts,only:[:index,:show]
+  resources :users
+  		#resources :metaposts,only:[:index,:show]
 
 
-	resources :posts, only: [:index, :show]
-	resources :pages, only: [:index, :show]
 	
-	namespace :admin do
- 		resources :pages, except: [:show]
- 		resources :posts, except: [:show]
- 		resources :post_metum, except: [:show]
-    resources :metaposts
- 		root "cpanel#index"
-	end
 
+	
+	  scope :path => "/:locale", :locale =>  /en|ru|de/ do
+
+		root "home#index"
+		resources :posts, only: [:index, :show]
+		resources :pages, only: [:index, :show]
+
+
+#  Для клиентов
+
+		namespace :backoffice do
+
+			resources :user_meta, only: [:index, :edit]
+
+	 		root "cpanel#index"
+		end
+
+#  Для работников
+
+		namespace :admin do
+
+	    	resources :posts, except: [:show]
+			resources :pages, except: [:show]
+
+	 		root "cpanel#index"
+		end
+
+	  end
 
 	#devise_for :user,
 	#			path: '',
