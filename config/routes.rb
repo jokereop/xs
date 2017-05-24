@@ -1,24 +1,29 @@
 Rails.application.routes.draw do
 
-  resources :users
-  		#resources :metaposts,only:[:index,:show]
+  
+root "home#index"
 
 
-	
-
-	
 	  scope :path => "/:locale", :locale =>  /en|ru|de/ do
+
+
+
+		resources :users, only: [:new, :create]
+		match '/signup',  to: 'users#new',            via: 'get'
+		#get 'exit', to: 'sessions#destroy', as: :logout
+
+
 
 		root "home#index"
 		resources :posts, only: [:index, :show]
 		resources :pages, only: [:index, :show]
-
-
+		
 #  Для клиентов
 
 		namespace :backoffice do
 
 			resources :user_meta, only: [:index, :edit]
+			resources :users, only: [:show, :edit, :update]
 
 	 		root "cpanel#index"
 		end
@@ -35,6 +40,8 @@ Rails.application.routes.draw do
 
 	  end
 
+
+#resources :metaposts,only:[:index,:show]
 	#devise_for :user,
 	#			path: '',
 	#			path_names: {

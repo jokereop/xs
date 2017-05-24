@@ -20,4 +20,33 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ru:
-  hello: "Привет Мир"
+ The_form_contains: 		"В форме есть"
+ form_error: 				"ошибка"
+ сreate_my_account:			"Создать аккаунт"
+ sign_up_user: 				"Регистрация пользователя"
+ activerecord:
+  attributes:
+   user:
+    user_login: 			"Логин"
+    user_email: 			"Электронная почта"
+    password: 				"Пароль"
+    password_confirmation: 	"Подтвержение пароля"
+  errors:
+    models:
+     user:
+      attributes:
+       user_login:
+         too_long: 			"слишком длинный."
+         invalid: 			"указан некорректно."
+         blank: 			"поле не заполнено"
+         too_short: 		"поле слишком короткое"
+       user_email:
+         invalid: 			"указан некорректно."
+         blank: 			"поле не заполнено"
+       password:
+         too_long: 			"слишком длинный."
+         invalid: 			"указан некорректно."
+         blank: 			"поле не заполнено"
+         too_short: 		"поле слишком короткое"
+       password_confirmation:
+         confirmation:		"не совпадает с полем 'Пароль'"

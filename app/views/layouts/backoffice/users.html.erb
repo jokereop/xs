@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SkyX</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+  <body>
+<div class = "site-content">
+
+<div class="row bg-back-block">
+  <div class="col-md-1">
+    <div class = "block-menu-1">
+      <div class = "block-logo">
+      SkyX
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-1">
+    <div class="block-menu-1">Lang</div>
+  </div>
+
+  <div class="col-md-7">
+    <div class="block-menu-1">
+      <div class='nav'>
+      <ul>
+        <li><a href='home.html'>Home</a></li>
+        <li><a href='tarif.html'>Articles</a></li>
+        <li><a href='reg.html'>Subscription</a></li>
+        <li><a href='#'>About Us</a></li>
+        <li><a href='#'>Contact Us</a></li>
+        <li class='lamp' style="left: 0px; width: 79px;"><span></span></li>
+      </ul>
+      </div>
+    </div>
+  </div>
+      
+  <div class="col-md-3">
+    <div class="block-menu-1">
+      <div class="btn-group">
+      <button class="btn">Logout</button>
+      <button class="btn"><%= @user.user_login %></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+    
+    <%= yield %>
+
+    <%= debug(params) if Rails.env.development? %>
+  </body>
+</html>
+
+

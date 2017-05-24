@@ -29,6 +29,9 @@ end
 # User password еncrypt
 gem 'bcrypt-ruby'
 
+# Lang
+
+gem 'russian'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
