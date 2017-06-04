@@ -11,7 +11,7 @@ class Admin::PostsController < ApplicationController
             summary
             
             ").
-          where(lang_id: '1').all
+          where(lang_id: lng).all
   end
 
   def new

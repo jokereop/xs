@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
 	def show
 		
-		@page =Page.find(params[:id])
+		@page =Page.find_by(href: params[:id])
 			.page_metum.
 				select("
 					id, 

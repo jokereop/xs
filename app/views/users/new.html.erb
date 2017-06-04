@@ -14,17 +14,17 @@
 	  <div class="span6">
 	    <%= form_for @user do |f| %>
 
-	      <%= f.label :user_login %>
-	      <%= f.text_field :user_login %>
+	  <p><%= f.label :user_login %></p>
+	   <p><%= f.text_field :user_login %></p>
 
-	      <%= f.label :user_email %>
-	      <%= f.text_field :user_email %>
+	  <p> <%= f.label :user_email %></p>
+	   <p><%= f.text_field :user_email %></p>
 
-	      <%= f.label :password %>
-	      <%= f.password_field :password %>
+	   <p><%= f.label :password %></p>
+	   <p><%= f.password_field :password %></p>
 
-	      <%= f.label :password_confirmation %>
-	      <%= f.password_field :password_confirmation %>
+	   <p><%= f.label :password_confirmation %></p>
+	   <p><%= f.password_field :password_confirmation %></p>
 
 	      <%= f.submit t("сreate_my_account"), class: "btn btn-large btn-primary" %>
 	    <% end %>

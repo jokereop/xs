@@ -191,13 +191,16 @@ ActiveRecord::Schema.define(version: 20170523015906) do
     t.string "password_digest"
     t.text "user_nicename"
     t.string "user_email"
-    t.text "user_activation_key"
+    t.text "remember_token"
     t.text "user_recovery_key"
     t.text "user_aktiv_key"
     t.string "user_url"
     t.integer "user_status_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["remember_token"], name: "index_users_on_remember_token"
+    t.index ["user_email"], name: "index_users_on_user_email"
+    t.index ["user_login"], name: "index_users_on_user_login"
     t.index ["user_status_id"], name: "index_users_on_user_status_id"
   end
 

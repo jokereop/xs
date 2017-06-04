@@ -1,0 +1,36 @@
+<div class = "site-content">
+<p>--- = <li><%= link_to "Users", '#' %></li></p>
+<p>--- = <%= remember_token = User.encrypt(cookies[:remember_token]) %></p>
+<p>--- = <%= @current_user %></p>
+<%= link_to "Sign out", signout_path, method: "delete" %>
+
+  <div class="row">
+  <div class="span6 offset3">
+<% provide(:title, t('sign_in')) %>
+<h1><%= t('sign_in') %></h1>
+
+
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+
+      <p><%= f.label :email %>
+      <%= f.text_field :email %></p>
+
+      <p><%= f.label :password , t('password') %>
+      <%= f.password_field :password %></p>
+
+      <%= f.submit t('sign_in_buton'), class: "btn btn-large btn-primary" %>
+    <% end %>
+
+    <p><%=t('new_user')%> ? <%= link_to t('sign_up_now'), signup_path %></p>
+  </div>
+</div>
+</div>
+

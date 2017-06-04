@@ -24,29 +24,51 @@ ru:
  form_error: 				"ошибка"
  сreate_my_account:			"Создать аккаунт"
  sign_up_user: 				"Регистрация пользователя"
+ sign_up: 					"Регистрация"
+ sign_in: 					"Авторизация"
+ sign_in_buton:     "Войти"
+ invalid_auth:      "Введенные вами данные не верны!"
+ new_user:            "Не зарегистрированны"
+ sign_up_now:            "Зарегистрируйтесь сейчас"
+ sessions:
+  new:
+   login:       "Логин"
+   email:       "Электронная почта"
+   password:         "Пароль"
+   password_confirmation:  "Подтвержение пароля"
+
+ controller:
+   session:
+     login:       "Логин"
+     email:       "Электронная почта"
+     password:         "Пароль"
+     password_confirmation:  "Подтвержение пароля"
+
  activerecord:
   attributes:
-   user:
-    user_login: 			"Логин"
-    user_email: 			"Электронная почта"
-    password: 				"Пароль"
-    password_confirmation: 	"Подтвержение пароля"
+    user:
+      user_login: 			"Логин"
+      user_email: 			"Электронная почта"
+      password: 				"Пароль"
+      password_confirmation: 	"Подтвержение пароля"
+  controller:
   errors:
     models:
-     user:
-      attributes:
-       user_login:
-         too_long: 			"слишком длинный."
-         invalid: 			"указан некорректно."
-         blank: 			"поле не заполнено"
-         too_short: 		"поле слишком короткое"
-       user_email:
-         invalid: 			"указан некорректно."
-         blank: 			"поле не заполнено"
-       password:
-         too_long: 			"слишком длинный."
-         invalid: 			"указан некорректно."
-         blank: 			"поле не заполнено"
-         too_short: 		"поле слишком короткое"
-       password_confirmation:
-         confirmation:		"не совпадает с полем 'Пароль'"
+      user:
+        attributes:
+          user_login:
+            too_long: 			"слишком длинный."
+            invalid: 			"указан некорректно."
+            blank: 			"поле не заполнено"
+            too_short: 		"поле слишком короткое"
+          user_email:
+            invalid: 			"указан некорректно."
+            blank: 			"поле не заполнено"
+          password:
+            too_long: 			"слишком длинный."
+            invalid: 			"указан некорректно."
+            blank: 			"поле не заполнено"
+            too_short: 		"поле слишком короткое"
+          password_confirmation:
+            confirmation:		"не совпадает с полем 'Пароль'"
+
