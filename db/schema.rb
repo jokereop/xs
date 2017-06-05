@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170508175246) do
+ActiveRecord::Schema.define(version: 20170523015906) do
 
   create_table "label_meta", force: :cascade do |t|
     t.integer "label_id"
@@ -34,18 +34,6 @@ ActiveRecord::Schema.define(version: 20170508175246) do
     t.integer "code"
   end
 
-  create_table "meta_posts", force: :cascade do |t|
-    t.integer "post_id"
-    t.string "title"
-    t.text "summary"
-    t.text "body"
-    t.integer "lang_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["lang_id"], name: "index_meta_posts_on_lang_id"
-    t.index ["post_id"], name: "index_meta_posts_on_post_id"
-  end
-
   create_table "metaposts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,6 +41,8 @@ ActiveRecord::Schema.define(version: 20170508175246) do
 
   create_table "page_meta", force: :cascade do |t|
     t.integer "page_id"
+    t.text "title"
+    t.text "summary"
     t.text "text"
     t.integer "lang_id"
     t.datetime "created_at", null: false
@@ -63,6 +53,7 @@ ActiveRecord::Schema.define(version: 20170508175246) do
 
   create_table "pages", force: :cascade do |t|
     t.string "tips"
+    t.text "href"
     t.datetime "datetime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -101,7 +92,7 @@ ActiveRecord::Schema.define(version: 20170508175246) do
     t.string "name"
   end
 
-  create_table "post_metum", force: :cascade do |t|
+  create_table "post_meta", force: :cascade do |t|
     t.integer "post_id"
     t.string "title"
     t.text "summary"
@@ -109,11 +100,12 @@ ActiveRecord::Schema.define(version: 20170508175246) do
     t.integer "lang_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["lang_id"], name: "index_post_metum_on_lang_id"
-    t.index ["post_id"], name: "index_post_metum_on_post_id"
+    t.index ["lang_id"], name: "index_post_meta_on_lang_id"
+    t.index ["post_id"], name: "index_post_meta_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
+    t.text "href"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -123,16 +115,16 @@ ActiveRecord::Schema.define(version: 20170508175246) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "rate_meta", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "rate_meta_values", force: :cascade do |t|
     t.integer "rate_meta_id"
     t.integer "rate_id"
     t.string "value"
     t.index ["rate_id"], name: "index_rate_meta_values_on_rate_id"
     t.index ["rate_meta_id"], name: "index_rate_meta_values_on_rate_meta_id"
-  end
-
-  create_table "rate_metum", force: :cascade do |t|
-    t.string "value"
   end
 
   create_table "rates", force: :cascade do |t|
@@ -152,7 +144,7 @@ ActiveRecord::Schema.define(version: 20170508175246) do
   end
 
   create_table "statistic_meta", force: :cascade do |t|
-    t.string "value"
+    t.string "name"
   end
 
   create_table "statistic_pays", force: :cascade do |t|
@@ -179,30 +171,37 @@ ActiveRecord::Schema.define(version: 20170508175246) do
   end
 
   create_table "user_meta", force: :cascade do |t|
+    t.integer "user_metum_value_id"
     t.integer "user_id"
     t.string "value"
     t.index ["user_id"], name: "index_user_meta_on_user_id"
+    t.index ["user_metum_value_id"], name: "index_user_meta_on_user_metum_value_id"
+  end
+
+  create_table "user_metum_values", force: :cascade do |t|
+    t.text "name"
   end
 
   create_table "user_statuses", force: :cascade do |t|
-    t.string "value"
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
+    t.string "user_login"
+    t.string "password_digest"
+    t.text "user_nicename"
+    t.string "user_email"
+    t.text "remember_token"
+    t.text "user_recovery_key"
+    t.text "user_aktiv_key"
+    t.string "user_url"
+    t.integer "user_status_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["remember_token"], name: "index_users_on_remember_token"
+    t.index ["user_email"], name: "index_users_on_user_email"
+    t.index ["user_login"], name: "index_users_on_user_login"
+    t.index ["user_status_id"], name: "index_users_on_user_status_id"
   end
 
 end

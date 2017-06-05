@@ -20,4 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  сreate_my_account:			"Create my account"
+  sign_in: 						"Sign in"
+  invalid_auth:   				"Invalid email/password combination"
+  sign_in_buton:     			"Sign in"
+  new_user:     				"New user"
+  sign_up_now:     				"Sign up now"

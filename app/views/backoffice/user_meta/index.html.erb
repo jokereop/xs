@@ -1,0 +1,6 @@
+
+<h1>News</h1>
+
+<% @user_metum.each do |metum| %>
+ 	<p><%=metum.value%> <%= link_to 'edit', edit_backoffice_user_metum_path(metum.id) %></p>
+<% end %> 

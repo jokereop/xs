@@ -1,0 +1,30 @@
+<h1>Backoffice::Users#edit</h1>
+
+
+<% provide(:title, "Edit user") %>
+<h1>Update your profile</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+      <p><%= render 'shared/error_messages' %></p>
+
+      <p><%= f.label :user_nicename %></p>
+      <p><%= f.text_field(:user_nicename)%></p>
+
+      <p><%= f.label :user_email %></p>
+      <p><%= f.text_field(:user_email) %></p>
+
+      <p><%= f.label :password %></p>
+      <p><%= f.password_field :password %></p>
+
+      <p><%= f.label :password_confirmation, "Confirm Password" %></p>
+      <p><%= f.password_field :password_confirmation %></p>
+
+      <p><%= f.submit "Save changes", class: "btn btn-large btn-primary" %></p>
+    <% end %>
+
+    <%= gravatar_for @user %>
+    <a href="http://gravatar.com/emails">change</a>
+  </div>
+</div>

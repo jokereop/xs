@@ -1,0 +1,12 @@
+- if signed_in?
+  .col-md-3
+    .block-menu-1
+      .btn-group
+        a.btn href= user_url lk
+        = link_to "signout", signout_path, method: :delete, :class=>"btn"
+- else
+  .col-md-3
+    .block-menu-1
+      .btn-group
+        a.btn href= signin_path       login 
+        a.btn href= new_user_path     registration

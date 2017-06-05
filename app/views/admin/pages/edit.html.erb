@@ -1,0 +1,28 @@
+<h1>Edit page</h1>
+
+<%= form_for @page do |f| %>
+	
+<%= f.fields_for :page_metum do |page_metum_form| %>
+    <% p page_metum_form.object.inspect%>
+
+
+    <div class="form_control">
+        <%= page_metum_form.label :text %>
+        <%= page_metum_form.text_area :text %>
+    </div>
+
+    <div class="form_control">
+
+        <%= page_metum_form.label :lang_id %>
+        <%= page_metum_form.select(:lang_id) do %>
+            <%= options_from_collection_for_select(Lang.all, :id, :name, page_metum_form.object.lang_id) %>
+
+        <% end %>
+    </div>
+    
+    <div class="form_control">
+        <%= page_metum_form.submit 'Save' %>
+
+    <% end %>
+
+<% end %>

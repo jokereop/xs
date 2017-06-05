@@ -1,0 +1,74 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ru:
+ The_form_contains: 		"В форме есть"
+ form_error: 				"ошибка"
+ сreate_my_account:			"Создать аккаунт"
+ sign_up_user: 				"Регистрация пользователя"
+ sign_up: 					"Регистрация"
+ sign_in: 					"Авторизация"
+ sign_in_buton:     "Войти"
+ invalid_auth:      "Введенные вами данные не верны!"
+ new_user:            "Не зарегистрированны"
+ sign_up_now:            "Зарегистрируйтесь сейчас"
+ sessions:
+  new:
+   login:       "Логин"
+   email:       "Электронная почта"
+   password:         "Пароль"
+   password_confirmation:  "Подтвержение пароля"
+
+ controller:
+   session:
+     login:       "Логин"
+     email:       "Электронная почта"
+     password:         "Пароль"
+     password_confirmation:  "Подтвержение пароля"
+
+ activerecord:
+  attributes:
+    user:
+      user_login: 			"Логин"
+      user_email: 			"Электронная почта"
+      password: 				"Пароль"
+      password_confirmation: 	"Подтвержение пароля"
+  controller:
+  errors:
+    models:
+      user:
+        attributes:
+          user_login:
+            too_long: 			"слишком длинный."
+            invalid: 			"указан некорректно."
+            blank: 			"поле не заполнено"
+            too_short: 		"поле слишком короткое"
+          user_email:
+            invalid: 			"указан некорректно."
+            blank: 			"поле не заполнено"
+          password:
+            too_long: 			"слишком длинный."
+            invalid: 			"указан некорректно."
+            blank: 			"поле не заполнено"
+            too_short: 		"поле слишком короткое"
+          password_confirmation:
+            confirmation:		"не совпадает с полем 'Пароль'"
+

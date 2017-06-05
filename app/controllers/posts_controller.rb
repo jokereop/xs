@@ -9,25 +9,23 @@ class PostsController < ApplicationController
 					summary, 
 					body
 				").
-				where(
-					lang_id: '1'
-				).take
+				where(lang_id: lng).take
 	end
 
 	def index
+
 		@posts = PostMetum.
 					where('`post_id` != 0')
 					.select("
 						
+						post_id,
 						title, 
 						summary
 						
 						").
-					where(lang_id: '1').all
-	end
+					where(lang_id: lng).all
 
-	def new
-		@post = Post.new
+
 	end
 
 end
