@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
 # /root
-
-	root to: "home#index"
-
+	get '/', to: redirect("/#{I18n.locale}")
+	#root to: "home#index"
+	#get "/(:lang)"=>"home#index", as: "root_with_lang"
 	scope :path => "/:locale", :locale =>  /en|ru|de/ do
 
 # /root/RU
