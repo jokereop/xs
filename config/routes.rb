@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :metaposts,only:[:index,:show]
 
-	get 'admin/metapost/new'=>'admin/metaposts#new', as: "new_admin_metapost"
+
 	resources :posts, only: [:index, :show]
 	resources :pages, only: [:index, :show]
 	
@@ -10,10 +10,10 @@ Rails.application.routes.draw do
  		resources :pages, except: [:show]
  		resources :posts, except: [:show]
  		resources :post_metum, except: [:show]
-   # resources :metaposts
- 		root "cpanel#index"
-	end
+   	resource :metapost
 
+		root "cpanel#index"
+	end
 
 	#devise_for :user,
 	#			path: '',
