@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 	get '/', to: redirect("/#{I18n.locale}")
 	#root to: "home#index"
 	#get "/(:lang)"=>"home#index", as: "root_with_lang"
-	scope :path => "/:locale", :locale =>  /en|ru|de/ do
+	scope :path => "/:locale", :locale =>  /#{I18n.available_locales.join("|")}/  do
 
 # /root/RU
 		resources :users, only: [:new, :create]
